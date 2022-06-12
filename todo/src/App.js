@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react';
 import {InsertForm, ListView} from './components'
 
 function App() {
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   function handleInsert (value){
-    setTodo((current)=>{
+    setTodos((current)=>{
       const newTodo = [...current];
       newTodo.push({
         key : new Date().getTime(),
-        value,
+        text : value,
         isCompleted : false
       });
       return newTodo;
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <InsertForm onInsert={handleInsert} />
-        <ListView />
+        <ListView todoList = {todos} />
       </header>
     </div>
   );
