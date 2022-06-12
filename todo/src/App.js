@@ -14,7 +14,26 @@ function App() {
       });
       return newTodo;
     })
-  }
+  };
+
+  function handleCompleteClick(index){
+    setTodos((current)=>{
+      const newTodo = [...current];
+      newTodo[index].isCompleted = true;
+      return newTodo
+    })
+
+  };
+
+  function handleRemoveClick(index){
+    setTodos((current)=>{
+      const newTodo = [...current];
+      newTodo.splice(index, 1);
+      return newTodo
+
+    })
+
+  };
 
 
 
@@ -23,7 +42,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <InsertForm onInsert={handleInsert} />
-        <ListView todoList = {todos} />
+        <ListView todoList = {todos} onComplete={handleCompleteClick} onRemove = {handleRemoveClick}/>
       </header>
     </div>
   );

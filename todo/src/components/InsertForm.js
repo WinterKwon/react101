@@ -9,7 +9,7 @@ function InsertForm ({onInsert}){
             onInsert(inputValue)
             }
         setInputValue('')
-        }, [inputValue]
+        }, [onInsert,inputValue]
         )
 
         console.log(inputValue);
