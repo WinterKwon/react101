@@ -18,7 +18,7 @@ function InsertForm ({onInsert}){
                 <FormInput value = {inputValue} onChange={ (e)=>{
                     setInputValue(e.target.value)
                 }}></FormInput>
-                <button type = "submit">등록</button>
+                <Button type = "submit">등록</Button>
             </Form>
         );    
 
@@ -38,4 +38,13 @@ const FormInput = styled.input`
 display : flex;
 justify-content : center;
 align-items : center;
+`;
+
+const Button = styled.button`
+    font-weight : 700;
+    font-size : 1.2rem;
+    border-radius : 4px;
+    border : 1px solid #A0D995;
+    background : #A0D995;
+    color : #fff;
 `;
