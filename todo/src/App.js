@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {InsertForm, ListView} from './components'
+import {InsertForm, ListView} from './components';
+import styled from 'styled-components';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -39,13 +40,17 @@ function App() {
 
 
   return (
-    <div className="App">
+    <AppDiv className="App">
       <header className="App-header">
         <InsertForm onInsert={handleInsert} />
         <ListView todoList = {todos} onComplete={handleCompleteClick} onRemove = {handleRemoveClick}/>
       </header>
-    </div>
+    </AppDiv>
   );
 }
 
 export default App;
+
+const AppDiv = styled.div`
+display : flex
+`;

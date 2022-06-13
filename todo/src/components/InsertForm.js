@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from "react";
-
+import styled from "styled-components";
 function InsertForm ({onInsert}){
     const [inputValue, setInputValue] = useState([]);
 
@@ -14,12 +14,12 @@ function InsertForm ({onInsert}){
 
         console.log(inputValue);
         return(
-            <form onSubmit={handleSubmit}>
-                <input value = {inputValue} onChange={ (e)=>{
+            <Form onSubmit={handleSubmit}>
+                <FormInput value = {inputValue} onChange={ (e)=>{
                     setInputValue(e.target.value)
-                }}></input>
+                }}></FormInput>
                 <button type = "submit">등록</button>
-            </form>
+            </Form>
         );    
 
 
@@ -27,3 +27,15 @@ function InsertForm ({onInsert}){
     
 
 export default InsertForm;
+
+const Form = styled.form`
+display : flex;
+justify-content : center;
+align-items : center;
+`;
+
+const FormInput = styled.input`
+display : flex;
+justify-content : center;
+align-items : center;
+`;
